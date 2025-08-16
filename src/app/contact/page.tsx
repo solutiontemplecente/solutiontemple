@@ -23,7 +23,7 @@ export default function ContactPage() {
             <CardContent className="text-center">
               <p className="text-foreground/80 mb-4">For immediate assistance and consultation, please use WhatsApp.</p>
               <Button asChild className="w-full bg-green-500 hover:bg-green-600 text-white">
-                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+                <a href="https://wa.me/2348139375655" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
               </Button>
             </CardContent>
           </Card>

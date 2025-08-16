@@ -35,7 +35,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               <li className="flex items-center gap-2">
                 <MessageSquare className="h-5 w-5 text-accent" />
-                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">WhatsApp Chat</a>
+                <a href="https://wa.me/2348139375655" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">WhatsApp Chat</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-accent" />

@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/common/header';
 import Footer from '@/components/common/footer';
+import WhatsAppButton from '@/components/common/whatsapp-button';
 
 export const metadata: Metadata = {
   title: 'Solutiontemple - Spiritual Consultant',
@@ -31,6 +32,7 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <Footer />
         </div>
+        <WhatsAppButton phoneNumber="+2348139375655" />
         <Toaster />
       </body>
     </html>
