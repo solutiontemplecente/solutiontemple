@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Logo from '@/components/logo';
@@ -17,6 +17,28 @@ const navLinks = [
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ];
+
+function ThemeToggleButton() {
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return document.documentElement.classList.contains('dark');
+        }
+        return false;
+    });
+
+    const toggleTheme = () => {
+        document.documentElement.classList.toggle('dark');
+        setIsDarkMode(!isDarkMode);
+    };
+
+    return (
+        <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
+            <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        </Button>
+    );
+}
+
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -47,11 +69,13 @@ export default function Header() {
           {navLinks.map((link) => (
             <NavLink key={link.href} {...link} />
           ))}
+           <ThemeToggleButton />
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
             <Link href="/book-a-spell">Book Your Spell</Link>
           </Button>
         </nav>
-        <div className="md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggleButton />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
