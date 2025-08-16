@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Logo from '@/components/logo';
 import { cn } from '@/lib/utils';
+import LanguageSwitcher from './language-switcher';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -70,12 +71,14 @@ export default function Header() {
             <NavLink key={link.href} {...link} />
           ))}
            <ThemeToggleButton />
+           <LanguageSwitcher />
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
             <Link href="/book-a-spell">Book Your Spell</Link>
           </Button>
         </nav>
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggleButton />
+          <LanguageSwitcher />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
