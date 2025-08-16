@@ -1,34 +1,42 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { CheckCircle } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const services = [
   {
     name: "Reunite Lovers Spell",
-    description: "Bring back an ex-lover or reconnect emotionally.",
-    delivery: "Within 3 days"
+    description: "Has distance, misunderstanding, or a painful breakup separated you from the one you love? This powerful spell works to dissolve the negative energies and emotional blockages that stand in your way, reopening the path for reconciliation and rekindling the flame of love.",
+    delivery: "Within 3 days",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "reuniting couple",
   },
   {
     name: "Attract New Love Spell",
-    description: "Manifest a soulmate or serious partner.",
-    delivery: "Within 5 days"
+    description: "If you are ready to welcome a true soulmate into your life, this spell is for you. It cleanses your aura, enhances your natural magnetism, and aligns your spiritual energy to attract a compatible, loving, and committed partner who is searching for someone just like you.",
+    delivery: "Within 5 days",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "love attraction",
   },
   {
     name: "Strengthen Relationship Spell",
-    description: "Eliminate third parties, restore peace.",
-    delivery: "Within 48 hours"
+    description: "Is your current relationship facing turmoil from third-party interference, constant arguments, or fading passion? This binding spell creates a powerful shield of protection around your union, neutralizing external threats and restoring peace, trust, and deep intimacy between you and your partner.",
+    delivery: "Within 48 hours",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "strong bond",
   },
   {
     name: "Stop Break-Up / Divorce Spell",
-    description: "Protect your marriage from falling apart.",
-    delivery: "Within 2–4 days"
+    description: "When your relationship is on the verge of collapse, this potent ritual works to halt the process of separation or divorce. It rebuilds the foundation of your union, reminding both partners of the love that once was and providing a chance to start anew.",
+    delivery: "Within 2–4 days",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "broken heart mending",
   },
   {
     name: "Custom Spell Work",
-    description: "Tailored to your unique love situation.",
-    delivery: "Time varies"
+    description: "Every love story is unique, and sometimes a situation requires a completely tailored approach. I will perform a deep divination to understand the specifics of your case and craft a custom spell designed to address your exact needs and desires.",
+    delivery: "Time varies",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "spiritual alchemy",
   }
 ];
 
@@ -39,51 +47,35 @@ export default function ServicesPage() {
         <div className="text-center">
           <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">My Spell Services</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            Powerful, ethical spells designed to help you with your love life challenges.
+            Powerful, ethical spells designed to help you with your love life challenges. Each ritual is performed with utmost care, tailored to your unique situation.
           </p>
         </div>
 
-        <Card className="mt-12 shadow-lg">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="font-headline text-primary text-lg">Service</TableHead>
-                <TableHead className="font-headline text-primary text-lg">Description</TableHead>
-                <TableHead className="font-headline text-primary text-lg text-right">Delivery</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {services.map((service) => (
-                <TableRow key={service.name}>
-                  <TableCell className="font-medium text-primary">{service.name}</TableCell>
-                  <TableCell className="text-foreground/80">{service.description}</TableCell>
-                  <TableCell className="text-right text-accent font-semibold">{service.delivery}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Card>
-
-        <section className="mt-16 md:mt-24">
-          <Card className="bg-secondary/50 border-primary/20 p-8">
-            <h2 className="font-headline text-2xl md:text-3xl text-center font-bold text-primary">What Each Spell Includes</h2>
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-lg">
-              <div className="flex flex-col items-center">
-                <CheckCircle className="h-10 w-10 text-accent" />
-                <h3 className="mt-4 font-semibold text-primary">Personalized Consultation</h3>
+        <div className="mt-16 space-y-20">
+          {services.map((service, index) => (
+            <div key={service.name} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className={`relative h-80 w-full rounded-lg shadow-xl overflow-hidden ${index % 2 === 1 ? 'md:order-2' : ''}`}>
+                <Image 
+                  src={service.image} 
+                  alt={service.name} 
+                  layout="fill" 
+                  objectFit="cover"
+                  data-ai-hint={service.aiHint}
+                />
               </div>
-              <div className="flex flex-col items-center">
-                <CheckCircle className="h-10 w-10 text-accent" />
-                <h3 className="mt-4 font-semibold text-primary">Custom Ritual</h3>
-                <p className="text-sm text-muted-foreground">(with your name & photo)</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <CheckCircle className="h-10 w-10 text-accent" />
-                <h3 className="mt-4 font-semibold text-primary">Post-Spell Follow-Up</h3>
+              <div className={index % 2 === 1 ? 'md:order-1' : ''}>
+                <h3 className="font-headline text-3xl text-primary">{service.name}</h3>
+                <p className="mt-4 text-foreground/80 leading-relaxed">
+                  {service.description}
+                </p>
+                <p className="mt-4 font-semibold text-accent">Delivery: {service.delivery}</p>
+                <Button asChild className="mt-6" variant="outline">
+                  <Link href="/book-a-spell">Request This Spell</Link>
+                </Button>
               </div>
             </div>
-          </Card>
-        </section>
+          ))}
+        </div>
         
         <div className="mt-16 md:mt-24 text-center">
            <p className="text-xl text-primary mb-4">Ready to change your destiny?</p>
