@@ -10,6 +10,42 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+
+const testimonials = [
+  {
+    name: "Esther",
+    location: "UK",
+    avatar: "https://placehold.co/100x100.png",
+    initials: "E",
+    rating: 5,
+    text: "She helped me bring back my fiancé in just 4 days. I’m in tears of joy! Thank you, Lady Amina."
+  },
+  {
+    name: "Joy",
+    location: "Nigeria",
+    avatar: "https://placehold.co/100x100.png",
+    initials: "J",
+    rating: 5,
+    text: "My boyfriend started texting me again after 2 weeks of silence. The spell worked — it’s like a miracle."
+  },
+  {
+    name: "Mike",
+    location: "Canada",
+    avatar: "https://placehold.co/100x100.png",
+    initials: "M",
+    rating: 4,
+    text: "I used to doubt spells, but her rituals are done with love and ethics. She is truly gifted."
+  },
+  {
+    name: "Sarah",
+    location: "USA",
+    avatar: "https://placehold.co/100x100.png",
+    initials: "S",
+    rating: 5,
+    text: "The 'Strengthen Relationship' spell worked wonders. The peace and love in my home have been restored completely."
+  },
+];
 
 
 export default function Home() {
@@ -196,27 +232,46 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">A Word From a Happy Soul</h2>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Words from Happy Souls</h2>
           </div>
-          <Card className="mt-12 max-w-3xl mx-auto bg-card shadow-xl p-8 border border-primary/20">
-             <div className="flex items-center">
-                <Avatar>
-                    <AvatarImage src="https://placehold.co/100x100.png" alt="Esther" data-ai-hint="person portrait" />
-                    <AvatarFallback>E</AvatarFallback>
-                </Avatar>
-                <div className="ml-4">
-                    <p className="font-bold text-primary">Esther, UK</p>
-                    <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                        ))}
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-3xl mx-auto mt-12"
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index}>
+                  <Card className="bg-card shadow-xl p-8 border border-primary/20">
+                     <div className="flex items-center">
+                        <Avatar>
+                            <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint="person portrait" />
+                            <AvatarFallback>{testimonial.initials}</AvatarFallback>
+                        </Avatar>
+                        <div className="ml-4">
+                            <p className="font-bold text-primary">{testimonial.name}, {testimonial.location}</p>
+                            <div className="flex">
+                                {[...Array(testimonial.rating)].map((_, i) => (
+                                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                                ))}
+                                {[...Array(5 - testimonial.rating)].map((_, i) => (
+                                    <Star key={i} className="h-5 w-5 text-gray-300" />
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <p className="mt-6 text-lg text-foreground/80 italic">
-                "She helped me bring back my fiancé in just 4 days. I’m in tears of joy! Thank you, Lady Amina."
-            </p>
-          </Card>
+                    <p className="mt-6 text-lg text-foreground/80 italic">
+                        "{testimonial.text}"
+                    </p>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </section>
 
