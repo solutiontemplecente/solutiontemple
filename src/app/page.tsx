@@ -76,8 +76,96 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      
       <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Explore Our Most Sought-After Spells</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-lg text-foreground/80">
+              Each ritual is performed with utmost care, tailored to your unique situation to bring about profound and lasting change.
+            </p>
+          </div>
+
+          <div className="mt-16 space-y-20">
+            {/* Service 1: Reunite Lovers Spell */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative h-80 w-full rounded-lg shadow-xl overflow-hidden">
+                <Image 
+                  src="https://placehold.co/600x400.png" 
+                  alt="Two hands reaching for each other" 
+                  layout="fill" 
+                  objectFit="cover"
+                  data-ai-hint="reuniting couple"
+                />
+              </div>
+              <div>
+                <h3 className="font-headline text-3xl text-primary">Reunite Lovers Spell</h3>
+                <p className="mt-4 text-foreground/80 leading-relaxed">
+                  Has distance, misunderstanding, or a painful breakup separated you from the one you love? This powerful spell works to dissolve the negative energies and emotional blockages that stand in your way, reopening the path for reconciliation and rekindling the flame of love.
+                </p>
+                <p className="mt-4 font-semibold text-accent">Delivery: Within 3 days</p>
+                <Button asChild className="mt-6" variant="outline">
+                  <Link href="/book-a-spell">Request This Spell</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Service 2: Attract New Love Spell */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative h-80 w-full rounded-lg shadow-xl overflow-hidden md:order-2">
+                <Image 
+                  src="https://placehold.co/600x400.png" 
+                  alt="A single red rose on a book" 
+                  layout="fill" 
+                  objectFit="cover"
+                  data-ai-hint="love attraction"
+                />
+              </div>
+              <div className="md:order-1">
+                <h3 className="font-headline text-3xl text-primary">Attract New Love Spell</h3>
+                <p className="mt-4 text-foreground/80 leading-relaxed">
+                  If you are ready to welcome a true soulmate into your life, this spell is for you. It cleanses your aura, enhances your natural magnetism, and aligns your spiritual energy to attract a compatible, loving, and committed partner who is searching for someone just like you.
+                </p>
+                <p className="mt-4 font-semibold text-accent">Delivery: Within 5 days</p>
+                 <Button asChild className="mt-6" variant="outline">
+                  <Link href="/book-a-spell">Request This Spell</Link>
+                </Button>
+              </div>
+            </div>
+            
+            {/* Service 3: Strengthen Relationship Spell */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative h-80 w-full rounded-lg shadow-xl overflow-hidden">
+                <Image 
+                  src="https://placehold.co/600x400.png" 
+                  alt="A rope tied into a strong knot" 
+                  layout="fill" 
+                  objectFit="cover"
+                  data-ai-hint="strong bond"
+                />
+              </div>
+              <div>
+                <h3 className="font-headline text-3xl text-primary">Strengthen Relationship Spell</h3>
+                <p className="mt-4 text-foreground/80 leading-relaxed">
+                  Is your current relationship facing turmoil from third-party interference, constant arguments, or fading passion? This binding spell creates a powerful shield of protection around your union, neutralizing external threats and restoring peace, trust, and deep intimacy between you and your partner.
+                </p>
+                <p className="mt-4 font-semibold text-accent">Delivery: Within 48 hours</p>
+                 <Button asChild className="mt-6" variant="outline">
+                  <Link href="/book-a-spell">Request This Spell</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-16 text-center">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link href="/services">View All Services</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Why Choose Solutiontemple?</h2>
@@ -105,7 +193,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-secondary/50">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">A Word From a Happy Soul</h2>
@@ -132,7 +220,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4 max-w-3xl">
            <div className="text-center">
             <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Frequently Asked Questions</h2>
@@ -140,7 +228,7 @@ export default function Home() {
               Have questions? Here are some of the most common ones I receive.
             </p>
           </div>
-          <Accordion type="single" collapsible className="w-full mt-12">
+          <Accordion type="single" collapsible className="w-full mt-12 bg-background p-8 rounded-lg shadow-lg">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold text-primary">Is spell casting safe?</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80">
