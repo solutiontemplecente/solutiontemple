@@ -1,3 +1,6 @@
+
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Globe, MessageCircle, Heart, Shield, Lock, Star } from 'lucide-react';
@@ -11,6 +14,7 @@ import {
 } from "@/components/ui/accordion"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { useLanguage } from '@/components/common/language-provider';
 
 const testimonials = [
   {
@@ -49,6 +53,7 @@ const testimonials = [
 
 
 export default function Home() {
+  const { t } = useLanguage();
   return (
     <div className="flex flex-col">
       <section className="relative h-[60vh] min-h-[400px] w-full text-white">
@@ -63,10 +68,10 @@ export default function Home() {
         <div className="absolute inset-0 z-10 bg-primary/70" />
         <div className="relative z-20 flex h-full flex-col items-center justify-center text-center p-4">
           <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg">
-            Restore Your Love Today 🌹
+            {t("Restore Your Love Today 🌹")}
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl text-primary-foreground/90">
-            A sanctuary where love, energy, and intention align to bring harmony back into your life.
+            {t("A sanctuary where love, energy, and intention align to bring harmony back into your life.")}
           </p>
           <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90 text-lg py-6 px-10">
             <Link href="/book-a-spell">Book Your Spell Now</Link>
@@ -77,10 +82,10 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">
-            Welcome to Solutiontemple
+            {t("Welcome to Solutiontemple")}
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-foreground/80">
-            I’m a licensed spiritual consultant with over 12 years of experience helping souls reunite with their true partners through ancient, ethical, and natural spell casting.
+            {t("I’m a licensed spiritual consultant with over 12 years of experience helping souls reunite with their true partners through ancient, ethical, and natural spell casting.")}
           </p>
         </div>
       </section>
@@ -308,3 +313,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

@@ -1,9 +1,11 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/common/header';
 import Footer from '@/components/common/footer';
 import WhatsAppButton from '@/components/common/whatsapp-button';
+import { LanguageProvider } from '@/components/common/language-provider';
 
 export const metadata: Metadata = {
   title: 'Solutiontemple - Spiritual Consultant',
@@ -27,14 +29,18 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
-        <WhatsAppButton phoneNumber="+2348139375655" />
-        <Toaster />
+        <LanguageProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
+          <WhatsAppButton phoneNumber="+2348139375655" />
+          <Toaster />
+        </LanguageProvider>
       </body>
     </html>
   );
 }
+
+    
