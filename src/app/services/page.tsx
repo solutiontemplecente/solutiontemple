@@ -16,14 +16,14 @@ const services = [
     name: "Attract New Love Spell",
     description: "If you are ready to welcome a true soulmate into your life, this spell is for you. It cleanses your aura, enhances your natural magnetism, and aligns your spiritual energy to attract a compatible, loving, and committed partner who is searching for someone just like you.",
     delivery: "Delivery: Within 5 days",
-    image: "https://placehold.co/600x400.png",
+    image: "https://artoftheroot.com/cdn/shop/articles/The_Power_of_Knot_Magic_in_Love_Spells.webp?v=1733408693",
     aiHint: "love attraction",
   },
   {
     name: "Strengthen Relationship Spell",
     description: "Is your current relationship facing turmoil from third-party interference, constant arguments, or fading passion? This binding spell creates a powerful shield of protection around your union, neutralizing external threats and restoring peace, trust, and deep intimacy between you and your partner.",
     delivery: "Delivery: Within 48 hours",
-    image: "https://placehold.co/600x400.png",
+    image: "https://cdn.shopify.com/s/files/1/2462/1459/files/Gay_Love_Spell_5_480x480.jpg?v=1729861436",
     aiHint: "strong bond",
   },
   {
