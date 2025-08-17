@@ -77,8 +77,11 @@ export function BookingForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     
+    // Omit the photo from the submission for now to prevent errors
+    const { photo, ...submissionValues } = values;
+
     try {
-      const result = await submitBooking(values);
+      const result = await submitBooking(submissionValues);
       if (result.success) {
         setShowSuccessDialog(true);
         form.reset();
