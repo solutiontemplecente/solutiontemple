@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Esther",
     location: "UK",
-    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuH7ry-DkF3M02C1Kde_vBN2sX_bl7W2PGA&s",
+    avatar: "",
     initials: "E",
     rating: 5,
     date: "4 days ago",
@@ -18,7 +18,7 @@ const testimonials = [
   {
     name: "Joy",
     location: "Nigeria",
-    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuH7ry-DkF3M02C1Kde_vBN2sX_bl7W2PGA&s",
+    avatar: "",
     initials: "J",
     rating: 5,
     date: "1 week ago",
@@ -27,7 +27,7 @@ const testimonials = [
   {
     name: "Mike",
     location: "Canada",
-    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuH7ry-DkF3M02C1Kde_vBN2sX_bl7W2PGA&s",
+    avatar: "",
     initials: "M",
     rating: 4,
     date: "2 weeks ago",
@@ -36,7 +36,7 @@ const testimonials = [
   {
     name: "Sarah",
     location: "USA",
-    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuH7ry-DkF3M02C1Kde_vBN2sX_bl7W2PGA&s",
+    avatar: "",
     initials: "S",
     rating: 5,
     date: "3 weeks ago",
@@ -45,7 +45,7 @@ const testimonials = [
   {
     name: "Ahmed",
     location: "UAE",
-    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuH7ry-DkF3M02C1Kde_vBN2sX_bl7W2PGA&s",
+    avatar: "",
     initials: "A",
     rating: 5,
     date: "1 month ago",
@@ -54,7 +54,7 @@ const testimonials = [
   {
     name: "Maria",
     location: "Australia",
-    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuH7ry-DkF3M02C1Kde_vBN2sX_bl7W2PGA&s",
+    avatar: "",
     initials: "M",
     rating: 5,
     date: "1 month ago",
