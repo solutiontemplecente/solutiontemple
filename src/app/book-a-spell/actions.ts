@@ -23,7 +23,7 @@ export async function submitBooking(values: FormValues) {
   const ip = headersList.get('x-forwarded-for') || 'Not available';
 
   const messageText = `
-New Spell Booking:
+New spell booking from Solution temple
 
 Full Name: ${values.fullName}
 WhatsApp: ${values.whatsappNumber}
