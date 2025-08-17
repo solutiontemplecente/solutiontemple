@@ -64,6 +64,12 @@ const nextConfig: NextConfig = {
         hostname: 'chiefbalala.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.etsystatic.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

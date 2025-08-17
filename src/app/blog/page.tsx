@@ -11,7 +11,7 @@ const blogPosts = [
     slug: "5-signs-you-need-a-love-spell",
     titleKey: "blog_title_1",
     excerptKey: "blog_excerpt_1",
-    image: "https://placehold.co/600x400.png",
+    image: "https://i.etsystatic.com/25258768/r/il/f9a708/2829438331/il_570xN.2829438331_ojek.jpg",
     aiHint: "love potion bottle"
   },
   {
