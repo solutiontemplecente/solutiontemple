@@ -52,6 +52,12 @@ const nextConfig: NextConfig = {
         hostname: 'makesaral.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.mysticprimrose.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

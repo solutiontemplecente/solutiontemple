@@ -37,7 +37,7 @@ const services = [
     name: "Custom Spell Work",
     description: "Every love story is unique, and sometimes a situation requires a completely tailored approach. I will perform a deep divination to understand the specifics of your case and craft a custom spell designed to address your exact needs and desires.",
     delivery: "Delivery: Time varies",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2_yNx4w-8a0e-A-3z3fG0r2G0z6b_hB7gQ&s",
+    image: "https://www.mysticprimrose.com/cdn/shop/files/IMG_1769.webp?v=1740669955&width=533",
     aiHint: "spiritual alchemy",
   }
 ];
