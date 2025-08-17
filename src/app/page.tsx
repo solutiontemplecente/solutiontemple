@@ -20,7 +20,7 @@ const testimonials = [
   {
     name: "Esther",
     location: "UK",
-    avatar: "https://placehold.co/100x100.png",
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuH7ry-DkF3M02C1Kde_vBN2sX_bl7W2PGA&s",
     initials: "E",
     rating: 5,
     textKey: "testimonial1"
@@ -28,7 +28,7 @@ const testimonials = [
   {
     name: "Joy",
     location: "Nigeria",
-    avatar: "https://placehold.co/100x100.png",
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuH7ry-DkF3M02C1Kde_vBN2sX_bl7W2PGA&s",
     initials: "J",
     rating: 5,
     textKey: "testimonial2"
@@ -36,7 +36,7 @@ const testimonials = [
   {
     name: "Mike",
     location: "Canada",
-    avatar: "https://placehold.co/100x100.png",
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuH7ry-DkF3M02C1Kde_vBN2sX_bl7W2PGA&s",
     initials: "M",
     rating: 4,
     textKey: "testimonial3"
@@ -44,7 +44,7 @@ const testimonials = [
   {
     name: "Sarah",
     location: "USA",
-    avatar: "https://placehold.co/100x100.png",
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuH7ry-DkF3M02C1Kde_vBN2sX_bl7W2PGA&s",
     initials: "S",
     rating: 5,
     textKey: "testimonial4"
@@ -349,5 +349,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
