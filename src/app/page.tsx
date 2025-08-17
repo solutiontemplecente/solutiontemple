@@ -178,7 +178,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="relative h-80 w-full rounded-lg shadow-xl overflow-hidden">
                 <Image 
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPXcWD--YoSWiCpUqtxXOl6DgoPtoVTG86PFqT0jrM8wxi7tLj9kl_GvRx7nxNeGVSfLw&usqp=CAU" 
+                  src="https://cdn.shopify.com/s/files/1/2462/1459/files/Gay_Love_Spell_5_480x480.jpg?v=1729861436" 
                   alt="A rope tied into a strong knot" 
                   layout="fill" 
                   objectFit="cover"
