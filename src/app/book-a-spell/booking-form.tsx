@@ -1,3 +1,4 @@
+
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -20,37 +21,42 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
+import { useLanguage } from '@/components/common/language-provider';
 
-const formSchema = z.object({
+const createFormSchema = (t: (key: any) => string) => z.object({
   fullName: z.string().min(2, {
-    message: 'Full name must be at least 2 characters.',
+    message: t('form_error_name_min'),
   }),
   whatsappNumber: z.string().min(10, {
-    message: 'Please enter a valid WhatsApp number.',
+    message: t('form_error_whatsapp_invalid'),
   }),
   email: z.string().email({
-    message: 'Please enter a valid email address.',
+    message: t('form_error_email_invalid'),
   }),
   spellType: z.string({
-    required_error: 'Please select a spell type.',
+    required_error: t('form_error_spell_required'),
   }),
   targetName: z.string().min(2, {
-    message: "Target person's name must be at least 2 characters.",
+    message: t('form_error_target_name_min'),
   }),
   photo: z.any().optional(),
   message: z.string().min(10, {
-    message: 'Message must be at least 10 characters.',
+    message: t('form_error_message_min'),
   }).max(500, {
-    message: 'Message must not be longer than 500 characters.'
+    message: t('form_error_message_max'),
   }),
   terms: z.boolean().refine((val) => val === true, {
-    message: 'You must accept the terms and conditions.',
+    message: t('form_error_terms_required'),
   }),
 });
+
 
 export function BookingForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useLanguage();
+
+  const formSchema = createFormSchema(t);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -72,8 +78,8 @@ export function BookingForm() {
     console.log(values);
     
     toast({
-      title: 'Booking Received!',
-      description: "You'll be contacted within 12 hours via WhatsApp.",
+      title: t('form_toast_title'),
+      description: t('form_toast_desc'),
       variant: 'default',
     });
     form.reset();
@@ -88,9 +94,9 @@ export function BookingForm() {
           name="fullName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Full Name</FormLabel>
+              <FormLabel>{t('form_label_name')}</FormLabel>
               <FormControl>
-                <Input placeholder="Your full name" {...field} />
+                <Input placeholder={t('form_placeholder_name')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -101,9 +107,9 @@ export function BookingForm() {
           name="whatsappNumber"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>WhatsApp Number</FormLabel>
+              <FormLabel>{t('form_label_whatsapp')}</FormLabel>
               <FormControl>
-                <Input placeholder="e.g., +1 123 456 7890" {...field} />
+                <Input placeholder={t('form_placeholder_whatsapp')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -114,9 +120,9 @@ export function BookingForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t('form_label_email')}</FormLabel>
               <FormControl>
-                <Input placeholder="your.email@example.com" {...field} />
+                <Input placeholder={t('form_placeholder_email')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -127,19 +133,19 @@ export function BookingForm() {
           name="spellType"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Type of Spell</FormLabel>
+              <FormLabel>{t('form_label_spell_type')}</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a spell" />
+                    <SelectValue placeholder={t('form_placeholder_spell_type')} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="reunite-lovers">Reunite Lovers Spell</SelectItem>
-                  <SelectItem value="attract-new-love">Attract New Love Spell</SelectItem>
-                  <SelectItem value="strengthen-relationship">Strengthen Relationship Spell</SelectItem>
-                  <SelectItem value="stop-breakup">Stop Break-Up / Divorce Spell</SelectItem>
-                  <SelectItem value="custom-spell">Custom Spell Work</SelectItem>
+                  <SelectItem value="reunite-lovers">{t('Reunite Lovers Spell')}</SelectItem>
+                  <SelectItem value="attract-new-love">{t('Attract New Love Spell')}</SelectItem>
+                  <SelectItem value="strengthen-relationship">{t('Strengthen Relationship Spell')}</SelectItem>
+                  <SelectItem value="stop-breakup">{t('Stop Break-Up / Divorce Spell')}</SelectItem>
+                  <SelectItem value="custom-spell">{t('Custom Spell Work')}</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -151,9 +157,9 @@ export function BookingForm() {
           name="targetName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Target Person’s First Name</FormLabel>
+              <FormLabel>{t('form_label_target_name')}</FormLabel>
               <FormControl>
-                <Input placeholder="Their first name" {...field} />
+                <Input placeholder={t('form_placeholder_target_name')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -164,12 +170,12 @@ export function BookingForm() {
           name="photo"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Upload Photo (Optional)</FormLabel>
+              <FormLabel>{t('form_label_photo')}</FormLabel>
               <FormControl>
                 <Input type="file" {...form.register('photo')} />
               </FormControl>
                <FormDescription>
-                You can upload a photo of yourself or the target person.
+                {t('form_desc_photo')}
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -180,10 +186,10 @@ export function BookingForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Describe Your Situation</FormLabel>
+              <FormLabel>{t('form_label_situation')}</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Tell me a little about your situation..."
+                  placeholder={t('form_placeholder_situation')}
                   className="resize-none"
                   {...field}
                 />
@@ -205,11 +211,11 @@ export function BookingForm() {
               </FormControl>
               <div className="space-y-1 leading-none">
                 <FormLabel>
-                  Accept terms and conditions
+                  {t('form_label_terms')}
                 </FormLabel>
                 <FormDescription>
-                  You agree to our{' '}
-                  <a href="/privacy-policy" className="underline hover:text-accent">Privacy Policy</a> and <a href="/refund-policy" className="underline hover:text-accent">Refund Policy</a>.
+                  {t('form_desc_terms_1')}{' '}
+                  <a href="/privacy-policy" className="underline hover:text-accent">{t('footer_privacy')}</a> {t('form_desc_terms_2')} <a href="/refund-policy" className="underline hover:text-accent">{t('footer_refund')}</a>.
                 </FormDescription>
                  <FormMessage />
               </div>
@@ -217,10 +223,10 @@ export function BookingForm() {
           )}
         />
         <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg" disabled={isSubmitting}>
-          {isSubmitting ? 'Submitting...' : 'Proceed to Payment'}
+          {isSubmitting ? t('form_button_submitting') : t('form_button_submit')}
         </Button>
         <p className="text-center text-xs text-muted-foreground">
-          Payment options: PayPal, Crypto, Bank Transfer. Details provided after submission.
+          {t('form_desc_payment')}
         </p>
       </form>
     </Form>
