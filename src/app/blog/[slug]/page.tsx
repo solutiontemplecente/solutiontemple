@@ -3,6 +3,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { useLanguage } from '@/components/common/language-provider';
+import React from 'react';
 
 const blogPosts = {
   "5-signs-you-need-a-love-spell": {
@@ -40,7 +41,8 @@ type BlogPostData = {
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const { t } = useLanguage();
-  const post = (blogPosts as Record<string, BlogPostData>)[params.slug];
+  const resolvedParams = React.use(params);
+  const post = (blogPosts as Record<string, BlogPostData>)[resolvedParams.slug];
 
   if (!post) {
     notFound();
