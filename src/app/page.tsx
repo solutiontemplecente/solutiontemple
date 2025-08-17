@@ -155,7 +155,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="relative h-80 w-full rounded-lg shadow-xl overflow-hidden md:order-2">
                 <Image 
-                  src="https://placehold.co/600x400.png" 
+                  src="https://artoftheroot.com/cdn/shop/articles/The_Power_of_Knot_Magic_in_Love_Spells.webp?v=1733408693" 
                   alt="A single red rose on a book" 
                   layout="fill" 
                   objectFit="cover"
