@@ -19,7 +19,7 @@ export default function AboutPage() {
           </div>
           <div className="relative h-80 md:h-96 w-full rounded-lg shadow-2xl overflow-hidden">
              <Image 
-                src="https://placehold.co/600x400.png"
+                src="https://chiefbalala.com/wp-content/uploads/2024/07/Default_images_of_a_black_magic_spells_temple_2-1024x575.jpg"
                 alt="Spiritualist portrait"
                 layout="fill"
                 objectFit="cover"

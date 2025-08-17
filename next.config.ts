@@ -58,6 +58,12 @@ const nextConfig: NextConfig = {
         hostname: 'www.mysticprimrose.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'chiefbalala.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
