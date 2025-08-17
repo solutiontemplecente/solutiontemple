@@ -121,9 +121,9 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Explore Our Most Sought-After Spells</h2>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">{t("Explore Our Most Sought-After Spells")}</h2>
             <p className="mt-4 max-w-3xl mx-auto text-lg text-foreground/80">
-              Each ritual is performed with utmost care, tailored to your unique situation to bring about profound and lasting change.
+              {t("Each ritual is performed with utmost care, tailored to your unique situation to bring about profound and lasting change.")}
             </p>
           </div>
 
@@ -140,13 +140,13 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h3 className="font-headline text-3xl text-primary">Reunite Lovers Spell</h3>
+                <h3 className="font-headline text-3xl text-primary">{t("Reunite Lovers Spell")}</h3>
                 <p className="mt-4 text-foreground/80 leading-relaxed">
-                  Has distance, misunderstanding, or a painful breakup separated you from the one you love? This powerful spell works to dissolve the negative energies and emotional blockages that stand in your way, reopening the path for reconciliation and rekindling the flame of love.
+                  {t("Has distance, misunderstanding, or a painful breakup separated you from the one you love? This powerful spell works to dissolve the negative energies and emotional blockages that stand in your way, reopening the path for reconciliation and rekindling the flame of love.")}
                 </p>
-                <p className="mt-4 font-semibold text-accent">Delivery: Within 3 days</p>
+                <p className="mt-4 font-semibold text-accent">{t("Delivery: Within 3 days")}</p>
                 <Button asChild className="mt-6" variant="outline">
-                  <Link href="/book-a-spell">Request This Spell</Link>
+                  <Link href="/book-a-spell">{t("Request This Spell")}</Link>
                 </Button>
               </div>
             </div>
@@ -163,13 +163,13 @@ export default function Home() {
                 />
               </div>
               <div className="md:order-1">
-                <h3 className="font-headline text-3xl text-primary">Attract New Love Spell</h3>
+                <h3 className="font-headline text-3xl text-primary">{t("Attract New Love Spell")}</h3>
                 <p className="mt-4 text-foreground/80 leading-relaxed">
-                  If you are ready to welcome a true soulmate into your life, this spell is for you. It cleanses your aura, enhances your natural magnetism, and aligns your spiritual energy to attract a compatible, loving, and committed partner who is searching for someone just like you.
+                  {t("If you are ready to welcome a true soulmate into your life, this spell is for you. It cleanses your aura, enhances your natural magnetism, and aligns your spiritual energy to attract a compatible, loving, and committed partner who is searching for someone just like you.")}
                 </p>
-                <p className="mt-4 font-semibold text-accent">Delivery: Within 5 days</p>
+                <p className="mt-4 font-semibold text-accent">{t("Delivery: Within 5 days")}</p>
                  <Button asChild className="mt-6" variant="outline">
-                  <Link href="/book-a-spell">Request This Spell</Link>
+                  <Link href="/book-a-spell">{t("Request This Spell")}</Link>
                 </Button>
               </div>
             </div>
@@ -186,13 +186,13 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h3 className="font-headline text-3xl text-primary">Strengthen Relationship Spell</h3>
+                <h3 className="font-headline text-3xl text-primary">{t("Strengthen Relationship Spell")}</h3>
                 <p className="mt-4 text-foreground/80 leading-relaxed">
-                  Is your current relationship facing turmoil from third-party interference, constant arguments, or fading passion? This binding spell creates a powerful shield of protection around your union, neutralizing external threats and restoring peace, trust, and deep intimacy between you and your partner.
+                  {t("Is your current relationship facing turmoil from third-party interference, constant arguments, or fading passion? This binding spell creates a powerful shield of protection around your union, neutralizing external threats and restoring peace, trust, and deep intimacy between you and your partner.")}
                 </p>
-                <p className="mt-4 font-semibold text-accent">Delivery: Within 48 hours</p>
+                <p className="mt-4 font-semibold text-accent">{t("Delivery: Within 48 hours")}</p>
                  <Button asChild className="mt-6" variant="outline">
-                  <Link href="/book-a-spell">Request This Spell</Link>
+                  <Link href="/book-a-spell">{t("Request This Spell")}</Link>
                 </Button>
               </div>
             </div>
@@ -200,7 +200,7 @@ export default function Home() {
           
           <div className="mt-16 text-center">
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link href="/services">View All Services</Link>
+              <Link href="/services">{t("View All Services")}</Link>
             </Button>
           </div>
         </div>
