@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Logo from '@/components/logo';
 import { Mail, MessageSquare } from 'lucide-react';
 import { useLanguage } from './language-provider';
+import LanguageSwitcher from './language-switcher';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -16,6 +17,12 @@ export default function Footer() {
             <p className="mt-4 text-sm text-primary-foreground/70">
               {t('A sanctuary where love, energy, and intention align.')}
             </p>
+             <div className="mt-4">
+                <h3 className="font-headline text-lg font-semibold text-white">{t('Language')}</h3>
+                <div className='mt-2'>
+                 <LanguageSwitcher isFooter={true} />
+                </div>
+            </div>
           </div>
           <div>
             <h3 className="font-headline text-lg font-semibold text-white">{t('footer_quick_links')}</h3>
