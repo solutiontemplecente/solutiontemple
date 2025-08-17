@@ -94,6 +94,12 @@ const nextConfig: NextConfig = {
         hostname: 'www.issakawafastspells.co.za',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'thumbs.dreamstime.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

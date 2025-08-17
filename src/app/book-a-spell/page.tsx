@@ -17,11 +17,11 @@ export default function BookSpellPage() {
             </p>
             <div className="relative h-64 w-full rounded-lg shadow-lg overflow-hidden mt-8">
               <Image 
-                src="https://placehold.co/600x400.png"
+                src="https://thumbs.dreamstime.com/b/wiccan-witch-altar-open-book-shadows-hand-written-spell-ready-spell-casting-grimoire-page-symbols-192259681.jpg"
                 alt="Spell casting items"
                 layout="fill"
                 objectFit="cover"
-                data-ai-hint="spell candles"
+                data-ai-hint="spell book"
               />
             </div>
           </div>
