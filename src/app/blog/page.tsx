@@ -25,7 +25,7 @@ const blogPosts = [
     slug: "why-african-love-spells-are-so-powerful",
     titleKey: "blog_title_3",
     excerptKey: "blog_excerpt_3",
-    image: "https://placehold.co/600x400.png",
+    image: "https://i.etsystatic.com/46663678/r/il/6b0460/5736528821/il_600x600.5736528821_r2j2.jpg",
     aiHint: "african spiritual symbols"
   },
   {
