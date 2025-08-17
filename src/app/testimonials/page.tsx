@@ -1,6 +1,9 @@
+
+'use client';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star } from 'lucide-react';
+import { useLanguage } from '@/components/common/language-provider';
 
 const testimonials = [
   {
@@ -10,7 +13,7 @@ const testimonials = [
     initials: "E",
     rating: 5,
     date: "4 days ago",
-    text: "She helped me bring back my fiancé in just 4 days. I’m in tears of joy! Thank you, Lady Amina."
+    textKey: "testimonial1"
   },
   {
     name: "Joy",
@@ -19,7 +22,7 @@ const testimonials = [
     initials: "J",
     rating: 5,
     date: "1 week ago",
-    text: "My boyfriend started texting me again after 2 weeks of silence. The spell worked — it’s like a miracle."
+    textKey: "testimonial2"
   },
   {
     name: "Mike",
@@ -28,7 +31,7 @@ const testimonials = [
     initials: "M",
     rating: 4,
     date: "2 weeks ago",
-    text: "I used to doubt spells, but her rituals are done with love and ethics. She is truly gifted."
+    textKey: "testimonial3"
   },
   {
     name: "Sarah",
@@ -37,7 +40,7 @@ const testimonials = [
     initials: "S",
     rating: 5,
     date: "3 weeks ago",
-    text: "The 'Strengthen Relationship' spell worked wonders. The peace and love in my home have been restored completely."
+    textKey: "testimonial4"
   },
   {
     name: "Ahmed",
@@ -46,7 +49,7 @@ const testimonials = [
     initials: "A",
     rating: 5,
     date: "1 month ago",
-    text: "I was skeptical, but desperate. Best decision I ever made. My wife and I are back together and happier than ever."
+    textKey: "testimonial5"
   },
   {
     name: "Maria",
@@ -55,7 +58,7 @@ const testimonials = [
     initials: "M",
     rating: 5,
     date: "1 month ago",
-    text: "The custom spell was incredibly powerful and tailored to my exact needs. Thank you for your guidance and support."
+    textKey: "testimonial6"
   }
 ];
 
@@ -70,13 +73,14 @@ const StarRating = ({ rating }: { rating: number }) => {
 };
 
 export default function TestimonialsPage() {
+    const { t } = useLanguage();
   return (
     <div className="bg-background">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="text-center">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">Words from Happy Souls</h1>
+          <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">{t('Words from Happy Souls')}</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            Discover how I've helped others find love and happiness. My average rating is 4.8/5.
+            {t('Discover how I\'ve helped others find love and happiness. My average rating is 4.8/5.')}
           </p>
         </div>
 
@@ -85,7 +89,7 @@ export default function TestimonialsPage() {
             <Card key={index} className="flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6">
                 <StarRating rating={testimonial.rating} />
-                <p className="mt-4 text-foreground/80 italic">"{testimonial.text}"</p>
+                <p className="mt-4 text-foreground/80 italic">"{t(testimonial.textKey as any)}"</p>
               </CardContent>
               <div className="bg-secondary/50 p-4 flex items-center justify-between">
                 <div className="flex items-center gap-4">
@@ -98,7 +102,7 @@ export default function TestimonialsPage() {
                     <p className="text-sm text-muted-foreground">{testimonial.location}</p>
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground">{testimonial.date}</p>
+                <p className="text-sm text-muted-foreground">{t(testimonial.date as any, {date: testimonial.date})}</p>
               </div>
             </Card>
           ))}

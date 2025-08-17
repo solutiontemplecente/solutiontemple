@@ -23,7 +23,7 @@ const testimonials = [
     avatar: "https://placehold.co/100x100.png",
     initials: "E",
     rating: 5,
-    text: "She helped me bring back my fiancé in just 4 days. I’m in tears of joy! Thank you, Lady Amina."
+    textKey: "testimonial1"
   },
   {
     name: "Joy",
@@ -31,7 +31,7 @@ const testimonials = [
     avatar: "https://placehold.co/100x100.png",
     initials: "J",
     rating: 5,
-    text: "My boyfriend started texting me again after 2 weeks of silence. The spell worked — it’s like a miracle."
+    textKey: "testimonial2"
   },
   {
     name: "Mike",
@@ -39,7 +39,7 @@ const testimonials = [
     avatar: "https://placehold.co/100x100.png",
     initials: "M",
     rating: 4,
-    text: "I used to doubt spells, but her rituals are done with love and ethics. She is truly gifted."
+    textKey: "testimonial3"
   },
   {
     name: "Sarah",
@@ -47,7 +47,7 @@ const testimonials = [
     avatar: "https://placehold.co/100x100.png",
     initials: "S",
     rating: 5,
-    text: "The 'Strengthen Relationship' spell worked wonders. The peace and love in my home have been restored completely."
+    textKey: "testimonial4"
   },
 ];
 
@@ -74,7 +74,7 @@ export default function Home() {
             {t("A sanctuary where love, energy, and intention align to bring harmony back into your life.")}
           </p>
           <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90 text-lg py-6 px-10">
-            <Link href="/book-a-spell">Book Your Spell Now</Link>
+            <Link href="/book-a-spell">{t("Book Your Spell Now")}</Link>
           </Button>
         </div>
       </section>
@@ -97,21 +97,21 @@ export default function Home() {
               <CardContent className="p-6">
                 <Users className="h-12 w-12 mx-auto text-accent" />
                 <h3 className="mt-4 text-3xl font-bold text-primary">1200+</h3>
-                <p className="mt-2 text-lg text-foreground">Happy Clients</p>
+                <p className="mt-2 text-lg text-foreground">{t('Happy Clients')}</p>
               </CardContent>
             </Card>
             <Card className="bg-card/80 backdrop-blur-sm shadow-lg border-primary/20">
               <CardContent className="p-6">
                 <Globe className="h-12 w-12 mx-auto text-accent" />
                 <h3 className="mt-4 text-3xl font-bold text-primary">20+</h3>
-                <p className="mt-2 text-lg text-foreground">Countries Served</p>
+                <p className="mt-2 text-lg text-foreground">{t('Countries Served')}</p>
               </CardContent>
             </Card>
             <Card className="bg-card/80 backdrop-blur-sm shadow-lg border-primary/20">
               <CardContent className="p-6">
                 <MessageCircle className="h-12 w-12 mx-auto text-accent" />
                 <h3 className="mt-4 text-3xl font-bold text-primary">24/7</h3>
-                <p className="mt-2 text-lg text-foreground">Support via WhatsApp</p>
+                <p className="mt-2 text-lg text-foreground">{t('Support via WhatsApp')}</p>
               </CardContent>
             </Card>
           </div>
@@ -209,26 +209,26 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Why Choose Solutiontemple?</h2>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">{t('Why Choose Solutiontemple?')}</h2>
             <p className="mt-4 max-w-3xl mx-auto text-lg text-foreground/80">
-              My practice is built on a foundation of trust, ancient wisdom, and a genuine desire to help you.
+              {t('My practice is built on a foundation of trust, ancient wisdom, and a genuine desire to help you.')}
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="text-center p-6 shadow-lg hover:shadow-xl transition-shadow">
               <Heart className="h-12 w-12 mx-auto text-accent" />
-              <h3 className="font-headline text-2xl font-semibold mt-4 text-primary">Ethical Practices</h3>
-              <p className="mt-2 text-foreground/80">All rituals respect free will and are performed with pure intentions for healing and love.</p>
+              <h3 className="font-headline text-2xl font-semibold mt-4 text-primary">{t('Ethical Practices')}</h3>
+              <p className="mt-2 text-foreground/80">{t('All rituals respect free will and are performed with pure intentions for healing and love.')}</p>
             </Card>
             <Card className="text-center p-6 shadow-lg hover:shadow-xl transition-shadow">
               <Lock className="h-12 w-12 mx-auto text-accent" />
-              <h3 className="font-headline text-2xl font-semibold mt-4 text-primary">100% Confidential</h3>
-              <p className="mt-2 text-foreground/80">Your privacy is my priority. All consultations and spell work are kept strictly confidential.</p>
+              <h3 className="font-headline text-2xl font-semibold mt-4 text-primary">{t('100% Confidential')}</h3>
+              <p className="mt-2 text-foreground/80">{t('Your privacy is my priority. All consultations and spell work are kept strictly confidential.')}</p>
             </Card>
             <Card className="text-center p-6 shadow-lg hover:shadow-xl transition-shadow">
               <Shield className="h-12 w-12 mx-auto text-accent" />
-              <h3 className="font-headline text-2xl font-semibold mt-4 text-primary">Guaranteed Safety</h3>
-              <p className="mt-2 text-foreground/80">I never use black magic. My work is focused on positive energy to ensure no harm comes to anyone.</p>
+              <h3 className="font-headline text-2xl font-semibold mt-4 text-primary">{t('Guaranteed Safety')}</h3>
+              <p className="mt-2 text-foreground/80">{t('I never use black magic. My work is focused on positive energy to ensure no harm comes to anyone.')}</p>
             </Card>
           </div>
         </div>
@@ -237,7 +237,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Words from Happy Souls</h2>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">{t('Words from Happy Souls')}</h2>
           </div>
           <Carousel
             opts={{
@@ -268,7 +268,7 @@ export default function Home() {
                         </div>
                     </div>
                     <p className="mt-6 text-lg text-foreground/80 italic">
-                        "{testimonial.text}"
+                        "{t(testimonial.textKey as any)}"
                     </p>
                   </Card>
                 </CarouselItem>
@@ -283,64 +283,64 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4 max-w-3xl">
            <div className="text-center">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Frequently Asked Questions</h2>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">{t('Frequently Asked Questions')}</h2>
             <p className="mt-4 mx-auto text-lg text-foreground/80">
-              Have questions? Here are some of the most common ones I receive.
+              {t('Have questions? Here are some of the most common ones I receive.')}
             </p>
           </div>
           <Accordion type="single" collapsible className="w-full mt-12 bg-background p-8 rounded-lg shadow-lg">
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-lg font-semibold text-primary text-left">Is spell casting safe?</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq1_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
-                Absolutely. My practice is rooted in ethical and positive energy work. I do not engage in any form of black magic or rituals intended to cause harm. The focus is always on healing, alignment, and respect for free will.
+                {t('faq1_a')}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger className="text-lg font-semibold text-primary text-left">How long does it take to see results?</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq2_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
-                The manifestation time for a spell can vary depending on the complexity of the situation and the energies involved. Some clients see results within a few days, while for others it may take a few weeks. Patience and a positive mindset are key.
+                {t('faq2_a')}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger className="text-lg font-semibold text-primary text-left">Is my information kept private?</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq3_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
-                Yes, 100%. All communications, including your personal details, situation, and any photos you share, are held in the strictest confidence. Your privacy and trust are paramount to my work.
+               {t('faq3_a')}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
-              <AccordionTrigger className="text-lg font-semibold text-primary text-left">Will a spell force someone to love me?</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq4_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
-                No. My ethical code strictly forbids any magic that manipulates free will. My spells work by clearing negative energy, healing emotional wounds, and enhancing the natural connection that already exists or could exist. It opens the door for love to flourish naturally, it doesn't force it.
+                {t('faq4_a')}
               </AccordionContent>
             </AccordionItem>
              <AccordionItem value="item-5">
-              <AccordionTrigger className="text-lg font-semibold text-primary text-left">What makes your spells different from others?</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq5_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
-                My approach is rooted in 5 generations of ancestral African healing traditions. I don't just recite words; I work with natural elements, ancestral spirits, and the unique energy of your situation. It's a holistic approach focused on alignment and healing, not just temporary results.
+                {t('faq5_a')}
               </AccordionContent>
             </AccordionItem>
              <AccordionItem value="item-6">
-              <AccordionTrigger className="text-lg font-semibold text-primary text-left">What kind of information do you need from me?</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq6_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
-                To begin, I will need the first names of the people involved and a brief, honest description of your situation. A recent photo can be very helpful for connecting with the energies, but it is not always mandatory. All information is, of course, completely confidential.
+                {t('faq6_a')}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-7">
-              <AccordionTrigger className="text-lg font-semibold text-primary text-left">Do I need to do anything after the spell is cast?</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq7_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
-                After the ritual is complete, I will give you simple instructions to follow. This often involves maintaining a positive mindset and being open to receiving the change you desire. You will not be asked to perform any complex rituals yourself. Your main role is to hold faith in the process.
+               {t('faq7_a')}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-8">
-              <AccordionTrigger className="text-lg font-semibold text-primary text-left">How will I know the spell is working?</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq8_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
-                Signs of manifestation can be subtle at first. You might notice a change in your own mood, feeling lighter and more hopeful. You may see 'synchronicities' or signs that remind you of your person. Communication may reopen, or the general energy between you will feel less tense. I provide guidance on how to recognize these signs.
+                {t('faq8_a')}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-9">
-              <AccordionTrigger className="text-lg font-semibold text-primary text-left">What if my situation is very complicated?</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq9_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
-               Many of the situations I handle are complex, involving third parties, long-term separations, or deep-seated issues. This is why I offer custom spell work. If your situation doesn't fit a standard spell, I will perform a divination to create a unique ritual tailored specifically to your needs.
+               {t('faq9_a')}
               </AccordionContent>
             </AccordionItem>
           </Accordion>
