@@ -280,15 +280,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-secondary/50">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section 
+        className="py-16 md:py-24 relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('https://thumbs.dreamstime.com/b/wiccan-witch-altar-open-book-shadows-hand-written-spell-ready-spell-casting-grimoire-page-symbols-192259681.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+        <div className="container mx-auto px-4 max-w-3xl relative">
            <div className="text-center">
             <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">{t('Frequently Asked Questions')}</h2>
             <p className="mt-4 mx-auto text-lg text-foreground/80">
               {t('Have questions? Here are some of the most common ones I receive.')}
             </p>
           </div>
-          <Accordion type="single" collapsible className="w-full mt-12 bg-background p-4 md:p-8 rounded-lg shadow-lg">
+          <Accordion type="single" collapsible className="w-full mt-12 bg-card/80 p-4 md:p-8 rounded-lg shadow-lg">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq1_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
@@ -349,7 +353,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
