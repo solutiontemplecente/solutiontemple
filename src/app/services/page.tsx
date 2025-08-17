@@ -30,14 +30,14 @@ const services = [
     name: "Stop Break-Up / Divorce Spell",
     description: "When your relationship is on the verge of collapse, this potent ritual works to halt the process of separation or divorce. It rebuilds the foundation of your union, reminding both partners of the love that once was and providing a chance to start anew.",
     delivery: "Delivery: Within 2–4 days",
-    image: "https://placehold.co/600x400.png",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz-1fC8qX-hPJoBv_C2ClhC_gVp_OFm-gDWA&s",
     aiHint: "broken heart mending",
   },
   {
     name: "Custom Spell Work",
     description: "Every love story is unique, and sometimes a situation requires a completely tailored approach. I will perform a deep divination to understand the specifics of your case and craft a custom spell designed to address your exact needs and desires.",
     delivery: "Delivery: Time varies",
-    image: "https://placehold.co/600x400.png",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2_yNx4w-8a0e-A-3z3fG0r2G0z6b_hB7gQ&s",
     aiHint: "spiritual alchemy",
   }
 ];
