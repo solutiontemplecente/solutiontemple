@@ -32,8 +32,8 @@ const blogPosts = [
     slug: "truth-about-black-magic",
     titleKey: "blog_title_4",
     excerptKey: "blog_excerpt_4",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "light dark contrast"
+    image: "https://static.vecteezy.com/system/resources/previews/053/107/739/non_2x/blue-eye-icon-free-vector.jpg",
+    aiHint: "eye icon"
   }
 ];
 

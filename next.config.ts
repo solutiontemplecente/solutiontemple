@@ -76,6 +76,12 @@ const nextConfig: NextConfig = {
         hostname: 'www.ritufy.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.vecteezy.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
