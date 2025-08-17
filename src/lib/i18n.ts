@@ -166,7 +166,7 @@ export const translations = {
     "form_desc_terms_2": "and",
     "form_error_terms_required": "You must accept the terms and conditions.",
     "form_button_submitting": "Submitting...",
-    "form_button_submit": "Proceed to Payment",
+    "form_button_submit": "Book Your Spell",
     "form_desc_payment": "Payment options: PayPal, Crypto, Bank Transfer. Details provided after submission.",
     "form_toast_title": "Booking Received!",
     "form_toast_desc": "You'll be contacted within 12 hours via WhatsApp."
@@ -337,7 +337,7 @@ export const translations = {
     "form_desc_terms_2": "e",
     "form_error_terms_required": "Você deve aceitar os termos e condições.",
     "form_button_submitting": "Enviando...",
-    "form_button_submit": "Prosseguir para o Pagamento",
+    "form_button_submit": "Reserve Seu Feitiço",
     "form_desc_payment": "Opções de pagamento: PayPal, Cripto, Transferência Bancária. Detalhes fornecidos após o envio.",
     "form_toast_title": "Reserva Recebida!",
     "form_toast_desc": "Você será contatado em até 12 horas via WhatsApp."
@@ -508,7 +508,7 @@ export const translations = {
     "form_desc_terms_2": "y",
     "form_error_terms_required": "Debes aceptar los términos y condiciones.",
     "form_button_submitting": "Enviando...",
-    "form_button_submit": "Proceder al Pago",
+    "form_button_submit": "Reserva Tu Hechizo",
     "form_desc_payment": "Opciones de pago: PayPal, Cripto, Transferencia Bancaria. Detalles proporcionados después del envío.",
     "form_toast_title": "¡Reserva Recibida!",
     "form_toast_desc": "Se te contactará en 12 horas por WhatsApp."
@@ -679,7 +679,7 @@ export const translations = {
     "form_desc_terms_2": "和",
     "form_error_terms_required": "您必须接受条款和条件。",
     "form_button_submitting": "正在提交...",
-    "form_button_submit": "继续付款",
+    "form_button_submit": "预订您的咒语",
     "form_desc_payment": "付款方式：PayPal、加密货币、银行转账。提交后提供详细信息。",
     "form_toast_title": "预订已收到！",
     "form_toast_desc": "我们将在 12 小时内通过 WhatsApp 与您联系。"
@@ -850,7 +850,7 @@ export const translations = {
     "form_desc_terms_2": "و",
     "form_error_terms_required": "يجب عليك قبول الشروط والأحكام.",
     "form_button_submitting": "جارٍ الإرسال ...",
-    "form_button_submit": "المتابعة إلى الدفع",
+    "form_button_submit": "احجز تعويذتك",
     "form_desc_payment": "خيارات الدفع: PayPal ، Crypto ، التحويل المصرفي. التفاصيل المقدمة بعد التقديم.",
     "form_toast_title": "تم استلام الحجز!",
     "form_toast_desc": "سيتم الاتصال بك في غضون 12 ساعة عبر WhatsApp."
@@ -1021,7 +1021,7 @@ export const translations = {
     "form_desc_terms_2": "et",
     "form_error_terms_required": "Vous devez accepter les termes et conditions.",
     "form_button_submitting": "Envoi en cours...",
-    "form_button_submit": "Procéder au paiement",
+    "form_button_submit": "Réservez votre sort",
     "form_desc_payment": "Options de paiement : PayPal, Crypto, Virement bancaire. Détails fournis après soumission.",
     "form_toast_title": "Réservation reçue !",
     "form_toast_desc": "Vous serez contacté dans les 12 heures via WhatsApp."
@@ -1192,7 +1192,7 @@ export const translations = {
     "form_desc_terms_2": "und",
     "form_error_terms_required": "Sie müssen die Allgemeinen Geschäftsbedingungen akzeptieren.",
     "form_button_submitting": "Wird gesendet...",
-    "form_button_submit": "Weiter zur Zahlung",
+    "form_button_submit": "Buchen Sie Ihren Zauber",
     "form_desc_payment": "Zahlungsmöglichkeiten: PayPal, Krypto, Banküberweisung. Details nach Einreichung.",
     "form_toast_title": "Buchung erhalten!",
     "form_toast_desc": "Sie werden innerhalb von 12 Stunden per WhatsApp kontaktiert."
@@ -1363,7 +1363,7 @@ export const translations = {
     "form_desc_terms_2": "और",
     "form_error_terms_required": "आपको नियम और शर्तें स्वीकार करनी होंगी।",
     "form_button_submitting": "सबमिट हो रहा है...",
-    "form_button_submit": "भुगतान के लिए आगे बढ़ें",
+    "form_button_submit": "अपना मंत्र बुक करें",
     "form_desc_payment": "भुगतान विकल्प: पेपैल, क्रिप्टो, बैंक हस्तांतरण। सबमिशन के बाद विवरण प्रदान किया गया।",
     "form_toast_title": "बुकिंग प्राप्त हुई!",
     "form_toast_desc": "आपसे 12 घंटे के भीतर व्हाट्सएप के माध्यम से संपर्क किया जाएगा।"

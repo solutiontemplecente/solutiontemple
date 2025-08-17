@@ -19,9 +19,10 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
-import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
 import { useLanguage } from '@/components/common/language-provider';
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
+import { CheckCircle } from 'lucide-react';
 
 const createFormSchema = (t: (key: any) => string) => z.object({
   fullName: z.string().min(2, {
@@ -52,8 +53,8 @@ const createFormSchema = (t: (key: any) => string) => z.object({
 
 
 export function BookingForm() {
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const { t } = useLanguage();
 
   const formSchema = createFormSchema(t);
@@ -77,158 +78,170 @@ export function BookingForm() {
     
     console.log(values);
     
-    toast({
-      title: t('form_toast_title'),
-      description: t('form_toast_desc'),
-      variant: 'default',
-    });
+    setShowSuccessDialog(true);
     form.reset();
     setIsSubmitting(false);
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <FormField
-          control={form.control}
-          name="fullName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t('form_label_name')}</FormLabel>
-              <FormControl>
-                <Input placeholder={t('form_placeholder_name')} {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="whatsappNumber"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t('form_label_whatsapp')}</FormLabel>
-              <FormControl>
-                <Input placeholder={t('form_placeholder_whatsapp')} {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t('form_label_email')}</FormLabel>
-              <FormControl>
-                <Input placeholder={t('form_placeholder_email')} {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="spellType"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t('form_label_spell_type')}</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+    <>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <FormField
+            control={form.control}
+            name="fullName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t('form_label_name')}</FormLabel>
                 <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder={t('form_placeholder_spell_type')} />
-                  </SelectTrigger>
+                  <Input placeholder={t('form_placeholder_name')} {...field} />
                 </FormControl>
-                <SelectContent>
-                  <SelectItem value="reunite-lovers">{t('Reunite Lovers Spell')}</SelectItem>
-                  <SelectItem value="attract-new-love">{t('Attract New Love Spell')}</SelectItem>
-                  <SelectItem value="strengthen-relationship">{t('Strengthen Relationship Spell')}</SelectItem>
-                  <SelectItem value="stop-breakup">{t('Stop Break-Up / Divorce Spell')}</SelectItem>
-                  <SelectItem value="custom-spell">{t('Custom Spell Work')}</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="targetName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t('form_label_target_name')}</FormLabel>
-              <FormControl>
-                <Input placeholder={t('form_placeholder_target_name')} {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="photo"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t('form_label_photo')}</FormLabel>
-              <FormControl>
-                <Input type="file" {...form.register('photo')} />
-              </FormControl>
-               <FormDescription>
-                {t('form_desc_photo')}
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>{t('form_label_situation')}</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder={t('form_placeholder_situation')}
-                  className="resize-none"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="terms"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
-              </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel>
-                  {t('form_label_terms')}
-                </FormLabel>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="whatsappNumber"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t('form_label_whatsapp')}</FormLabel>
+                <FormControl>
+                  <Input placeholder={t('form_placeholder_whatsapp')} {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t('form_label_email')}</FormLabel>
+                <FormControl>
+                  <Input placeholder={t('form_placeholder_email')} {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="spellType"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t('form_label_spell_type')}</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder={t('form_placeholder_spell_type')} />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="reunite-lovers">{t('Reunite Lovers Spell')}</SelectItem>
+                    <SelectItem value="attract-new-love">{t('Attract New Love Spell')}</SelectItem>
+                    <SelectItem value="strengthen-relationship">{t('Strengthen Relationship Spell')}</SelectItem>
+                    <SelectItem value="stop-breakup">{t('Stop Break-Up / Divorce Spell')}</SelectItem>
+                    <SelectItem value="custom-spell">{t('Custom Spell Work')}</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="targetName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t('form_label_target_name')}</FormLabel>
+                <FormControl>
+                  <Input placeholder={t('form_placeholder_target_name')} {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="photo"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t('form_label_photo')}</FormLabel>
+                <FormControl>
+                  <Input type="file" {...form.register('photo')} />
+                </FormControl>
                 <FormDescription>
-                  {t('form_desc_terms_1')}{' '}
-                  <a href="/privacy-policy" className="underline hover:text-accent">{t('footer_privacy')}</a> {t('form_desc_terms_2')} <a href="/refund-policy" className="underline hover:text-accent">{t('footer_refund')}</a>.
+                  {t('form_desc_photo')}
                 </FormDescription>
-                 <FormMessage />
-              </div>
-            </FormItem>
-          )}
-        />
-        <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg" disabled={isSubmitting}>
-          {isSubmitting ? t('form_button_submitting') : t('form_button_submit')}
-        </Button>
-        <p className="text-center text-xs text-muted-foreground">
-          {t('form_desc_payment')}
-        </p>
-      </form>
-    </Form>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t('form_label_situation')}</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder={t('form_placeholder_situation')}
+                    className="resize-none"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="terms"
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel>
+                    {t('form_label_terms')}
+                  </FormLabel>
+                  <FormDescription>
+                    {t('form_desc_terms_1')}{' '}
+                    <a href="/privacy-policy" className="underline hover:text-accent">{t('footer_privacy')}</a> {t('form_desc_terms_2')} <a href="/refund-policy" className="underline hover:text-accent">{t('footer_refund')}</a>.
+                  </FormDescription>
+                  <FormMessage />
+                </div>
+              </FormItem>
+            )}
+          />
+          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg" disabled={isSubmitting}>
+            {isSubmitting ? t('form_button_submitting') : t('nav_book_spell')}
+          </Button>
+        </form>
+      </Form>
+      <AlertDialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <div className="flex justify-center">
+                <CheckCircle className="h-16 w-16 text-green-500" />
+            </div>
+            <AlertDialogTitle className="text-center">{t('form_toast_title')}</AlertDialogTitle>
+            <AlertDialogDescription className="text-center">
+              {t('form_toast_desc')}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={() => setShowSuccessDialog(false)}>Close</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </>
   );
 }
+
