@@ -58,7 +58,7 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="relative h-[60vh] min-h-[400px] w-full text-white">
         <Image
-          src="https://placehold.co/1920x1080.png"
+          src="https://img.etimg.com/thumb/msid-116685050,width-650,height-488,imgsize-42538,resizemode-75/bloodworm-love-spell-ritual-sparks-debate-in-singapore.jpg"
           alt="Spiritual background"
           layout="fill"
           objectFit="cover"
@@ -349,3 +349,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
