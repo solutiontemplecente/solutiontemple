@@ -1,16 +1,20 @@
+
+'use client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Award, ShieldCheck, Lock } from 'lucide-react';
 import Image from 'next/image';
+import { useLanguage } from '@/components/common/language-provider';
 
 export default function AboutPage() {
+  const { t } = useLanguage();
   return (
     <div className="bg-background">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">About Me</h1>
+            <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">{t('about_title')}</h1>
             <p className="mt-6 text-lg text-foreground/80 leading-relaxed">
-              Hello, I’m a spiritualist and 5th-generation African healer. I was born with the divine gift of energetic alignment and emotional healing. My journey began in the sacred lands of Benin, where my grandmother passed down secret ancestral rituals for love and harmony.
+              {t('about_desc')}
             </p>
           </div>
           <div className="relative h-80 md:h-96 w-full rounded-lg shadow-2xl overflow-hidden">
@@ -25,52 +29,52 @@ export default function AboutPage() {
         </div>
 
         <section className="mt-24">
-            <h2 className="text-center font-headline text-3xl md:text-4xl font-bold text-primary">My Certifications</h2>
+            <h2 className="text-center font-headline text-3xl md:text-4xl font-bold text-primary">{t('about_cert_title')}</h2>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <Card className="text-center">
                     <CardHeader>
                         <Award className="h-12 w-12 mx-auto text-accent"/>
-                        <CardTitle className="font-body font-semibold text-xl mt-4">Energy Healing License</CardTitle>
+                        <CardTitle className="font-body font-semibold text-xl mt-4">{t('about_cert_1_title')}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-muted-foreground">Holistic Practitioner Board</p>
+                        <p className="text-muted-foreground">{t('about_cert_1_desc')}</p>
                     </CardContent>
                 </Card>
                  <Card className="text-center">
                     <CardHeader>
                         <ShieldCheck className="h-12 w-12 mx-auto text-accent"/>
-                        <CardTitle className="font-body font-semibold text-xl mt-4">Spiritual Wellness</CardTitle>
+                        <CardTitle className="font-body font-semibold text-xl mt-4">{t('about_cert_2_title')}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-muted-foreground">Global Occult Council (G.O.C.)</p>
+                        <p className="text-muted-foreground">{t('about_cert_2_desc')}</p>
                     </CardContent>
                 </Card>
                  <Card className="text-center">
                     <CardHeader>
                         <Lock className="h-12 w-12 mx-auto text-accent"/>
-                        <CardTitle className="font-body font-semibold text-xl mt-4">Registered Member</CardTitle>
+                        <CardTitle className="font-body font-semibold text-xl mt-4">{t('about_cert_3_title')}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-muted-foreground">Spiritual Advisors Network (SAN)</p>
+                        <p className="text-muted-foreground">{t('about_cert_3_desc')}</p>
                     </CardContent>
                 </Card>
             </div>
         </section>
 
         <section className="mt-24 text-center">
-             <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">My Core Values</h2>
+             <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">{t('about_values_title')}</h2>
              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-foreground/80">
                  <div className="p-6">
-                     <h3 className="font-headline text-2xl text-primary">Ethical Spell Casting</h3>
-                     <p className="mt-2">All rituals are performed with pure intentions and respect for free will.</p>
+                     <h3 className="font-headline text-2xl text-primary">{t('about_value_1_title')}</h3>
+                     <p className="mt-2">{t('about_value_1_desc')}</p>
                  </div>
                  <div className="p-6">
-                     <h3 className="font-headline text-2xl text-primary">100% Confidentiality</h3>
-                     <p className="mt-2">Your privacy is paramount. All consultations and work are kept strictly secret.</p>
+                     <h3 className="font-headline text-2xl text-primary">{t('about_value_2_title')}</h3>
+                     <p className="mt-2">{t('about_value_2_desc')}</p>
                  </div>
                  <div className="p-6">
-                     <h3 className="font-headline text-2xl text-primary">No Black Magic</h3>
-                     <p className="mt-2">I do not engage in any form of magic that causes harm or manipulates against natural order.</p>
+                     <h3 className="font-headline text-2xl text-primary">{t('about_value_3_title')}</h3>
+                     <p className="mt-2">{t('about_value_3_desc')}</p>
                  </div>
              </div>
         </section>

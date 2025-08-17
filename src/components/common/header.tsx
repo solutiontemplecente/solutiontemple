@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -9,14 +10,15 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Logo from '@/components/logo';
 import { cn } from '@/lib/utils';
 import LanguageSwitcher from './language-switcher';
+import { useLanguage } from './language-provider';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About Me' },
-  { href: '/services', label: 'Services' },
-  { href: '/testimonials', label: 'Testimonials' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', labelKey: 'nav_home' },
+  { href: '/about', labelKey: 'nav_about' },
+  { href: '/services', labelKey: 'nav_services' },
+  { href: '/testimonials', labelKey: 'nav_testimonials' },
+  { href: '/blog', labelKey: 'nav_blog' },
+  { href: '/contact', labelKey: 'nav_contact' },
 ];
 
 function ThemeToggleButton() {
@@ -44,8 +46,9 @@ function ThemeToggleButton() {
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useLanguage();
 
-  const NavLink = ({ href, label, className = '' }: { href: string; label: string; className?: string }) => {
+  const NavLink = ({ href, labelKey, className = '' }: { href: string; labelKey: string; className?: string }) => {
     const isActive = pathname === href;
     return (
       <Link
@@ -57,7 +60,7 @@ export default function Header() {
           className
         )}
       >
-        {label}
+        {t(labelKey as any)}
       </Link>
     );
   };
@@ -73,7 +76,7 @@ export default function Header() {
            <ThemeToggleButton />
            <LanguageSwitcher />
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <Link href="/book-a-spell">Book Your Spell</Link>
+            <Link href="/book-a-spell">{t('nav_book_spell')}</Link>
           </Button>
         </nav>
         <div className="flex items-center gap-2 md:hidden">
@@ -99,7 +102,7 @@ export default function Header() {
                     <NavLink key={link.href} {...link} />
                   ))}
                   <Button asChild size="lg" className="mt-4 bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href="/book-a-spell" onClick={() => setIsMobileMenuOpen(false)}>Book Your Spell</Link>
+                    <Link href="/book-a-spell" onClick={() => setIsMobileMenuOpen(false)}>{t('nav_book_spell')}</Link>
                   </Button>
                 </nav>
               </div>
