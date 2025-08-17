@@ -82,6 +82,12 @@ const nextConfig: NextConfig = {
         hostname: 'static.vecteezy.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.learnreligions.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

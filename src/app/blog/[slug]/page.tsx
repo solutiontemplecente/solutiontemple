@@ -26,8 +26,8 @@ const blogPosts = {
   },
   "truth-about-black-magic": {
     titleKey: "blog_title_4",
-    image: "https://static.vecteezy.com/system/resources/previews/053/107/739/non_2x/blue-eye-icon-free-vector.jpg",
-    aiHint: "eye icon",
+    image: "https://www.learnreligions.com/thmb/xm_0rIzRxmhJi2rsUfBdZKa0zqE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/spotlight-falling-on-magician-hands-557222545-5b072277ba61770036453705.jpg",
+    aiHint: "magic hands",
     contentKey: "blog_content_4",
   }
 };
