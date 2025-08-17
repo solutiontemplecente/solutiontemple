@@ -88,6 +88,12 @@ const nextConfig: NextConfig = {
         hostname: 'www.learnreligions.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.issakawafastspells.co.za',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
