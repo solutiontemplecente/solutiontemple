@@ -14,7 +14,7 @@ const blogPosts = {
   },
   "how-full-moon-affects-spell-energy": {
     titleKey: "blog_title_2",
-    image: "https://placehold.co/1200x600.png",
+    image: "https://www.ritufy.com/wp-content/uploads/2024/09/full-moon-rituals.jpg",
     aiHint: "full moon sky",
     contentKey: "blog_content_2",
   },

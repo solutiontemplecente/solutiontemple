@@ -70,6 +70,12 @@ const nextConfig: NextConfig = {
         hostname: 'i.etsystatic.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.ritufy.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
