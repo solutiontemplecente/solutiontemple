@@ -290,21 +290,57 @@ export default function Home() {
           </div>
           <Accordion type="single" collapsible className="w-full mt-12 bg-background p-8 rounded-lg shadow-lg">
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-lg font-semibold text-primary">Is spell casting safe?</AccordionTrigger>
-              <AccordionContent className="text-base text-foreground/80">
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">Is spell casting safe?</AccordionTrigger>
+              <AccordionContent className="text-base text-foreground/80 text-left">
                 Absolutely. My practice is rooted in ethical and positive energy work. I do not engage in any form of black magic or rituals intended to cause harm. The focus is always on healing, alignment, and respect for free will.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger className="text-lg font-semibold text-primary">How long does it take to see results?</AccordionTrigger>
-              <AccordionContent className="text-base text-foreground/80">
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">How long does it take to see results?</AccordionTrigger>
+              <AccordionContent className="text-base text-foreground/80 text-left">
                 The manifestation time for a spell can vary depending on the complexity of the situation and the energies involved. Some clients see results within a few days, while for others it may take a few weeks. Patience and a positive mindset are key.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger className="text-lg font-semibold text-primary">Is my information kept private?</AccordionTrigger>
-              <AccordionContent className="text-base text-foreground/80">
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">Is my information kept private?</AccordionTrigger>
+              <AccordionContent className="text-base text-foreground/80 text-left">
                 Yes, 100%. All communications, including your personal details, situation, and any photos you share, are held in the strictest confidence. Your privacy and trust are paramount to my work.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">Will a spell force someone to love me?</AccordionTrigger>
+              <AccordionContent className="text-base text-foreground/80 text-left">
+                No. My ethical code strictly forbids any magic that manipulates free will. My spells work by clearing negative energy, healing emotional wounds, and enhancing the natural connection that already exists or could exist. It opens the door for love to flourish naturally, it doesn't force it.
+              </AccordionContent>
+            </AccordionItem>
+             <AccordionItem value="item-5">
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">What makes your spells different from others?</AccordionTrigger>
+              <AccordionContent className="text-base text-foreground/80 text-left">
+                My approach is rooted in 5 generations of ancestral African healing traditions. I don't just recite words; I work with natural elements, ancestral spirits, and the unique energy of your situation. It's a holistic approach focused on alignment and healing, not just temporary results.
+              </AccordionContent>
+            </AccordionItem>
+             <AccordionItem value="item-6">
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">What kind of information do you need from me?</AccordionTrigger>
+              <AccordionContent className="text-base text-foreground/80 text-left">
+                To begin, I will need the first names of the people involved and a brief, honest description of your situation. A recent photo can be very helpful for connecting with the energies, but it is not always mandatory. All information is, of course, completely confidential.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-7">
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">Do I need to do anything after the spell is cast?</AccordionTrigger>
+              <AccordionContent className="text-base text-foreground/80 text-left">
+                After the ritual is complete, I will give you simple instructions to follow. This often involves maintaining a positive mindset and being open to receiving the change you desire. You will not be asked to perform any complex rituals yourself. Your main role is to hold faith in the process.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-8">
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">How will I know the spell is working?</AccordionTrigger>
+              <AccordionContent className="text-base text-foreground/80 text-left">
+                Signs of manifestation can be subtle at first. You might notice a change in your own mood, feeling lighter and more hopeful. You may see 'synchronicities' or signs that remind you of your person. Communication may reopen, or the general energy between you will feel less tense. I provide guidance on how to recognize these signs.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-9">
+              <AccordionTrigger className="text-lg font-semibold text-primary text-left">What if my situation is very complicated?</AccordionTrigger>
+              <AccordionContent className="text-base text-foreground/80 text-left">
+               Many of the situations I handle are complex, involving third parties, long-term separations, or deep-seated issues. This is why I offer custom spell work. If your situation doesn't fit a standard spell, I will perform a divination to create a unique ritual tailored specifically to your needs.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -313,5 +349,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
