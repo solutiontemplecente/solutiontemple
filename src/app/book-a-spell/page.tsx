@@ -8,8 +8,8 @@ export default function BookSpellPage() {
   const { t } = useLanguage();
   return (
     <div className="bg-background">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-4 py-12 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <div>
             <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">{t('book_spell_title')}</h1>
             <p className="mt-4 text-lg text-foreground/80">
@@ -26,7 +26,7 @@ export default function BookSpellPage() {
             </div>
           </div>
 
-          <div className="bg-card p-8 rounded-lg shadow-2xl border border-primary/10">
+          <div className="bg-card p-6 md:p-8 rounded-lg shadow-2xl border border-primary/10">
             <BookingForm />
           </div>
         </div>

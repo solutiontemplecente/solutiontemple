@@ -67,7 +67,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 z-10 bg-primary/70" />
         <div className="relative z-20 flex h-full flex-col items-center justify-center text-center p-4">
-          <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg">
+          <h1 className="font-headline text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg">
             {t("Restore Your Love Today 🌹")}
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl text-primary-foreground/90">
@@ -288,7 +288,7 @@ export default function Home() {
               {t('Have questions? Here are some of the most common ones I receive.')}
             </p>
           </div>
-          <Accordion type="single" collapsible className="w-full mt-12 bg-background p-8 rounded-lg shadow-lg">
+          <Accordion type="single" collapsible className="w-full mt-12 bg-background p-4 md:p-8 rounded-lg shadow-lg">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-lg font-semibold text-primary text-left">{t('faq1_q')}</AccordionTrigger>
               <AccordionContent className="text-base text-foreground/80 text-left">
