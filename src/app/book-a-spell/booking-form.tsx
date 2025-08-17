@@ -23,6 +23,8 @@ import { useState } from 'react';
 import { useLanguage } from '@/components/common/language-provider';
 import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 import { CheckCircle } from 'lucide-react';
+import { submitBooking } from './actions';
+import { useToast } from '@/hooks/use-toast';
 
 const createFormSchema = (t: (key: any) => string) => z.object({
   fullName: z.string().min(2, {
@@ -56,6 +58,7 @@ export function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const { t } = useLanguage();
+  const { toast } = useToast();
 
   const formSchema = createFormSchema(t);
 
@@ -73,14 +76,28 @@ export function BookingForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
     
-    console.log(values);
-    
-    setShowSuccessDialog(true);
-    form.reset();
-    setIsSubmitting(false);
+    try {
+      const result = await submitBooking(values);
+      if (result.success) {
+        setShowSuccessDialog(true);
+        form.reset();
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Submission Failed",
+          description: result.error || "There was a problem with your submission.",
+        });
+      }
+    } catch (error) {
+       toast({
+          variant: "destructive",
+          title: "Submission Error",
+          description: "An unexpected error occurred. Please try again.",
+        });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -244,4 +261,3 @@ export function BookingForm() {
     </>
   );
 }
-
