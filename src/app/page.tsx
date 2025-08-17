@@ -132,8 +132,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="relative h-80 w-full rounded-lg shadow-xl overflow-hidden">
                 <Image 
-                  src="https://placehold.co/600x400.png" 
-                  alt="Two hands reaching for each other" 
+                  src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/160281278/original/0b5e5011a795ed18f8185caee189ca66666d2f2a/cast-a-spell-to-retrieve-and-reunite-your-lover.jpeg" 
+                  alt={t("Reunite Lovers Spell")} 
                   layout="fill" 
                   objectFit="cover"
                   data-ai-hint="reuniting couple"

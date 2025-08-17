@@ -9,7 +9,7 @@ const services = [
     name: "Reunite Lovers Spell",
     description: "Has distance, misunderstanding, or a painful breakup separated you from the one you love? This powerful spell works to dissolve the negative energies and emotional blockages that stand in your way, reopening the path for reconciliation and rekindling the flame of love.",
     delivery: "Delivery: Within 3 days",
-    image: "https://placehold.co/600x400.png",
+    image: "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/160281278/original/0b5e5011a795ed18f8185caee189ca66666d2f2a/cast-a-spell-to-retrieve-and-reunite-your-lover.jpeg",
     aiHint: "reuniting couple",
   },
   {
