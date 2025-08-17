@@ -30,7 +30,7 @@ const services = [
     name: "Stop Break-Up / Divorce Spell",
     description: "When your relationship is on the verge of collapse, this potent ritual works to halt the process of separation or divorce. It rebuilds the foundation of your union, reminding both partners of the love that once was and providing a chance to start anew.",
     delivery: "Delivery: Within 2–4 days",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz-1fC8qX-hPJoBv_C2ClhC_gVp_OFm-gDWA&s",
+    image: "https://makesaral.com/wp-content/uploads/classified-listing/2025/07/save-love.jpg",
     aiHint: "broken heart mending",
   },
   {
