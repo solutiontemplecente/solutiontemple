@@ -36,11 +36,6 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          # Automatically inject basePath in your next.config.js (required for GitHub Pages)
-          static_site_generator: next
       - name: Install dependencies
         run: npm install
       - name: Build with Next.js
