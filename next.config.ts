@@ -3,10 +3,13 @@ import type {NextConfig} from 'next';
 
 const isProd = process.env.NODE_ENV === 'production';
 
+// The basePath is the name of the repository on GitHub
+const basePath = isProd ? '/solutiontemple' : '';
+
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: isProd ? '/solutiontemple' : '',
-  assetPrefix: isProd ? '/solutiontemple/' : '',
+  basePath: basePath,
+  assetPrefix: basePath,
   images: {
     unoptimized: true,
   },
@@ -15,13 +18,6 @@ const nextConfig: NextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
-  },
-  experimental: {
-    // This is required to allow requests from the development environment.
-    allowedDevOrigins: [
-      'https://*.cloudworkstations.dev',
-      'https://*.firebase.studio',
-    ],
   },
 };
 
